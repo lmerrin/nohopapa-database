@@ -15,6 +15,7 @@ export default function NavBar() {
         toggle={() => {
           setIsOpen(!isOpen);
         }}
+        toggled={isOpen}
       />
       <ul className="page-links">
         <NavLink to="/">Home</NavLink>
