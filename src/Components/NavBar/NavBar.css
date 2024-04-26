@@ -15,6 +15,95 @@
   display: none;
 }
 
+@keyframes expand {
+  from {
+    width: 0;
+    height: 0%;
+    background-color: rgba(238, 130, 238, 0%);
+    border-left: solid 1px rgba(245, 245, 245, 0%);
+  }
+  to {
+    width: clamp(300px, 100%, 600px);
+    height: 100%;
+    background-color: rgba(238, 130, 238, 30%);
+    border-left: solid 1px rgba(245, 245, 245, 100%);
+  }
+}
+
+@keyframes collapse {
+  from {
+    width: clamp(300px, 100%, 600px);
+    background-color: rgba(238, 130, 238, 30%);
+    border-left: solid 1px rgba(245, 245, 245, 100%);
+    display: block;
+  }
+
+  to {
+    width: 0px;
+    background-color: rgba(238, 130, 238, 0%);
+    border-left: solid 1px rgba(245, 245, 245, 0%);
+    display: none;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-menu {
+  display: none;
+  justify-content: center;
+  position: absolute;
+  height: calc(100% - var(--navbar-height));
+  width: 100%;
+  right: 0;
+  top: var(--navbar-height);
+}
+
+.menu-open {
+  animation: expand 1s ease-in-out forwards;
+  display: block;
+}
+
+.menu-closed {
+  animation: collapse 1s ease-in-out forwards;
+  display: none;
+}
+
+.menu-open-link {
+  animation: fadein 1.3s ease-in-out forwards;
+}
+
+.menu-close-link {
+  animation: fadeout 0.7s ease-in-out forwards;
+}
+
+.mobile-page-links {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
+  gap: 10px;
+}
+
+.mobile-page-links a {
+ white-space: nowrap;
+}
+
 @media (min-width: 800px) {
   .hamburger-react {
     display: none;
