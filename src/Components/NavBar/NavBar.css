@@ -1,13 +1,16 @@
 .responsive-navbar {
   --navbar-height: 60px;
   height: var(--navbar-height);
-  position: relative;
   display: flex;
+  position: fixed;
+  left: 0px;
+  right: 0px;
   justify-content: space-between;
   padding: 0px 10px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
   border-bottom: 1px solid black;
+  z-index: 1;
 }
 
 .page-links {
@@ -67,7 +70,7 @@
 .mobile-menu {
   display: none;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   height: calc(100% - var(--navbar-height));
   right: 0;
   top: var(--navbar-height);
