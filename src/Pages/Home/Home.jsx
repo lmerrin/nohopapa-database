@@ -1,4 +1,5 @@
 import "./Home.css";
+import wkipImage from "../../assets/WKIP.png"
 
 export default function Home() {
   return (
@@ -21,17 +22,27 @@ export default function Home() {
           <h2>How to get started</h2>
           <ol>
             <li>
-              1. USE THE REPOSITORY - You can use the search bar in the repository
-              to look anything up—reports, authors, names, places. Feel free to
-              also use the resources page for a list of other external online
-              resources and repositories that can be used for primary research!
+              <p>1. USE THE REPOSITORY </p>
+              <p>
+                You can use the search bar in the repository to look anything
+                up—reports, authors, names, places. Feel free to also use the
+                resources page for a list of other external online resources and
+                repositories that can be used for primary research!
+              </p>
             </li>
             <li>
-              2. CONTRIBUTE - Help grow the database by clicking contribute and
-              filling out the form.
+              <p>2. CONTRIBUTE</p>
+              <p>
+                Help grow the database by clicking contribute and filling out
+                the form.
+              </p>
             </li>
           </ol>
         </section>
+
+        <div className="image-placeholder">
+            <img src={wkipImage} alt="Placeholder Image" />
+        </div>
 
         <aside className="explore-section">
           <h2>Explore</h2>
@@ -44,7 +55,13 @@ export default function Home() {
             <li>HISTORIC MAPS</li>
           </ul>
         </aside>
+
       </main>
+
+      <footer>
+        <p>Copyright © 2024 Lilia Website Designs</p>
+      </footer>
+
     </div>
   );
 }
