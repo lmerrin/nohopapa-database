@@ -8,7 +8,7 @@
   justify-content: space-between;
   padding: 0px 10px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid black;
   z-index: 1;
 }
@@ -27,7 +27,7 @@
   to {
     width: clamp(300px, 100%, 600px);
     height: calc(100% - var(--navbar-height));
-    background-color: rgba(238, 130, 238, 30%);
+    background-color: rgba(195, 224, 229, 97%);
     border-left: solid 1px rgba(245, 245, 245, 100%);
   }
 }
@@ -36,7 +36,7 @@
   from {
     width: clamp(300px, 100%, 600px);
     height: calc(100% - var(--navbar-height));
-    background-color: rgba(238, 130, 238, 30%);
+    background-color: rgba(195, 224, 229, 97%);
     border-left: solid 1px rgba(245, 245, 245, 100%);
     display: block;
   }
@@ -69,11 +69,15 @@
 
 .mobile-menu {
   display: none;
+  flex-direction: column;
   justify-content: center;
   position: fixed;
   height: calc(100% - var(--navbar-height));
   right: 0;
   top: var(--navbar-height);
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 2;
 }
 
 .menu-open {
@@ -96,14 +100,28 @@
 
 .mobile-page-links {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  gap: 15px;
   padding: 0;
-  gap: 10px;
 }
 
 .mobile-page-links a {
   white-space: nowrap;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mobile-page-links a:hover {
+  background-color: rgba(195, 224, 229, 80%);
+  color: blue;
+  text-decoration-line: underline;
+  transition: background-color 0.7s, color 0.7s;
 }
 
 @media (min-width: 800px) {
