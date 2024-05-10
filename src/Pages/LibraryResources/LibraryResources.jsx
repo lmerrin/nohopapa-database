@@ -1,20 +1,12 @@
 import './LibraryResources.css';
+import { Link } from 'react-router-dom';
 
 
 export default function LibraryResources() {
   return (
     <div className="library-resources-container">
-    {/* Navigation bar */}
-    <nav className="navbar">
-      <img src="/path/to/logo.png" alt="Nohopapa Logo" className="logo" />
-      <ul className="nav-links">
-        <li><a href="/home">Home</a></li>
-        <li><a href="/library-resources">Library Resources</a></li>
-        <li><a href="/search-repository">Search Repository</a></li>
-        <li><a href="/contribute">Contribute</a></li>
-      </ul>
-    </nav>
-
+    <div className="library-background"></div>
+ 
     {/* Main content section */}
     <section className="resources-section">
       <h1>Library Resources</h1>
@@ -22,31 +14,35 @@ export default function LibraryResources() {
         <div className="category">
           <h2>Environmental Landscape</h2>
           <ul>
-            <li><a href="URL1">Boundaries</a></li>
-            <li><a href="URL2">Soils</a></li>
-            <li><a href="URL3">Rainfall</a></li>
-            <li><a href="URL4">Names of UA</a></li>
-            <li><a href="URL5">Names of Makani</a></li>
-            <li><a href="URL6">Plant Species</a></li>
+            <li><Link to="/Enviornmental-Landscape">Boundaries</Link></li>
+            <li><Link to="/Enviornmental-Landscape">Soils</Link></li>
+            <li><Link to="/Enviornmental-Landscape">Rainfall</Link></li>
+            <li><Link to="/Enviornmental-Landscape">Names of Ua</Link></li>
+            <li><Link to="/Enviornmental-Landscape">Names of Makani</Link></li>
+            <li><Link to="/Enviornmental-Landscape">Plant Species</Link></li>
           </ul>
         </div>
 
         <div className="category">
           <h2>Cultural Landscape</h2>
           <ul>
-            <li><a href="URL7">Place Names</a></li>
-            <li><a href="URL8">Mele and ʻŌlelo Noʻeau</a></li>
-            <li><a href="URL9">Moʻolelo</a></li>
+            <li><Link to="/Cultural-Landscape">Place Names</Link></li>
+            <li><Link to="/Cultural-Landscape">Boundary Commission Testimony</Link></li>
+            <li><Link to="/Cultural-Landscape">Mele and ʻŌlelo Noʻeau</Link></li>
+            <li><Link to="/Cultural-Landscape">Moʻolelo</Link></li>
           </ul>
         </div>
 
         <div className="category">
           <h2>Historical Landscape</h2>
           <ul>
-            <li><a href="URL10">Kuleana Act</a></li>
-            <li><a href="URL11">Early Historic Period</a></li>
-            <li><a href="URL12">Historical Maps and Photographs</a></li>
-            <li><a href="URL13">Previous Archaeology</a></li>
+          <li><Link to="/Historical-Landscape">General Links</Link></li>
+          <li><Link to="/Historical-Landscape">Early Historic Period</Link></li>
+          <li><Link to="/Historical-Landscape">Kuleana Act</Link></li>
+          <li><Link to="/Historical-Landscape">Plantation and Ranching Eras</Link></li>
+          <li><Link to="/Historical-Landscape">Historical Maps and Photographs</Link></li>
+          <li><Link to="/Historical-Landscape">Previous Archaeology</Link></li>
+          <li><Link to="/Historical-Landscape">Property Records Search</Link></li>
           </ul>
         </div>
       </div>

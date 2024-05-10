@@ -1,24 +1,14 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-  }
-  
-  /* Resources section styles */
-
-  .resources-section {
+/* EnviornmentalLandscape.css */
+.environmental-landscape-container {
     padding: 40px;
   }
-
-  .library-resources-background {
   
-  }
-  .resources-section h1 {
+  .environmental-landscape-container h1 {
     text-align: center;
     margin-bottom: 40px;
   }
   
-  .resource-categories {
+  .landscape-categories {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -55,4 +45,3 @@ body {
   .category ul a:hover {
     text-decoration: underline;
   }
-  
