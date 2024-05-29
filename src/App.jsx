@@ -6,13 +6,24 @@ import EnviornmentalLandscape from "./Pages/LibraryResources/EnviornmentalLandsc
 import CulturalLandscape from "./Pages/LibraryResources/CulturalLandscape/CulturalLandscape.jsx";
 import HistoricalLandscape from "./Pages/LibraryResources/HistoricalLandscape/HistoricalLandscape.jsx";
 
+import api from "./api.js";
 import "normalize.css";
 import "./App.css";
-
-
-
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const downloadExternalReources = async () => {
+      try {
+        const externalResources = await api.fetchExternalResources();
+        console.log(externalResources);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    downloadExternalReources();
+  }, []);
+
   return (
     <>
       <NavBar />
@@ -20,9 +31,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Library-Resources" element={<LibraryResources />} />
-        <Route path="/Enviornmental-Landscape" element={<EnviornmentalLandscape />} />
-        <Route path="/Cultural-Landscape" element={<CulturalLandscape/>} />
-        <Route path="/Historical-Landscape" element={<HistoricalLandscape/>} />
+        <Route
+          path="/Enviornmental-Landscape"
+          element={<EnviornmentalLandscape />}
+        />
+        <Route path="/Cultural-Landscape" element={<CulturalLandscape />} />
+        <Route path="/Historical-Landscape" element={<HistoricalLandscape />} />
       </Routes>
     </>
   );
