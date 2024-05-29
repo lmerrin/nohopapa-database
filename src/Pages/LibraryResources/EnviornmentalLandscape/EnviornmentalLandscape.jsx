@@ -4,9 +4,9 @@ const environmentalLandscape = [
     {
       category: 'Boundaries',
       links: [
-        { title: 'Maly and Maly - Kumupono Associates', url: '#' },
+        { title: 'Maly and Maly - Kumupono Associates', url: 'https://www.kumupono.com/' },
         { title: 'Boundary Commission Testimony', url: '#' },
-        { title: 'Ava Konohiki', url: '#' },
+        { title: 'Ava Konohiki', url: 'http://avakonohiki.weebly.com/' },
         { title: 'Papakilo', url: '#' },
         { title: 'Ulukau', url: '#' },
         { title: 'Kipuka', url: '#' },
