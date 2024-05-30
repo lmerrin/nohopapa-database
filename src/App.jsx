@@ -12,17 +12,7 @@ import "./App.css";
 import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    const downloadExternalReources = async () => {
-      try {
-        const externalResources = await api.fetchExternalResources();
-        console.log(externalResources);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    downloadExternalReources();
-  }, []);
+ 
 
   return (
     <>

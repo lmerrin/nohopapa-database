@@ -1,52 +1,43 @@
-import './LibraryResources.css';
-import { Link } from 'react-router-dom';
+import ResourceCategory from "./ResourceCategory";
+import "./LibraryResources.css";
+import api from "../../api";
+import { useEffect, useState } from "react";
 
+//If Navigation Breaks
+const categoryPageLinks = {
+  "Environmental Landscape":"/Enviornmental-Landscape",
+  "Cultural Landscape" : "/Cultural-Landscape",
+  "Historical Landscape" : "/Historical-Landscape",
+}
 
 export default function LibraryResources() {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const downloadResourceCategories = async () => {
+      try {
+        const resourceCategories = await api.fetchResouceCategories();
+        console.log(resourceCategories);
+        setCategories(resourceCategories);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    downloadResourceCategories();
+  }, []);
   return (
     <div className="library-resources-container">
-    <div className="library-background"></div>
- 
-    {/* Main content section */}
-    <section className="resources-section">
-      <h1>Library Resources</h1>
-      <div className="resource-categories">
-        <div className="category">
-          <h2>Environmental Landscape</h2>
-          <ul>
-            <li><Link to="/Enviornmental-Landscape">Boundaries</Link></li>
-            <li><Link to="/Enviornmental-Landscape">Soils</Link></li>
-            <li><Link to="/Enviornmental-Landscape">Rainfall</Link></li>
-            <li><Link to="/Enviornmental-Landscape">Names of Ua</Link></li>
-            <li><Link to="/Enviornmental-Landscape">Names of Makani</Link></li>
-            <li><Link to="/Enviornmental-Landscape">Plant Species</Link></li>
-          </ul>
-        </div>
+      <div className="library-background"></div>
 
-        <div className="category">
-          <h2>Cultural Landscape</h2>
-          <ul>
-            <li><Link to="/Cultural-Landscape">Place Names</Link></li>
-            <li><Link to="/Cultural-Landscape">Boundary Commission Testimony</Link></li>
-            <li><Link to="/Cultural-Landscape">Mele and ʻŌlelo Noʻeau</Link></li>
-            <li><Link to="/Cultural-Landscape">Moʻolelo</Link></li>
-          </ul>
+      {/* Main content section */}
+      <section className="resources-section">
+        <h1>Library Resources</h1>
+        <div className="resource-categories">
+          {categories.map((category) => {
+           return(<ResourceCategory key={category.id} title={category.name} subcategories={category.subcategories} link={categoryPageLinks[category.name]}/>);
+          })}
         </div>
-
-        <div className="category">
-          <h2>Historical Landscape</h2>
-          <ul>
-          <li><Link to="/Historical-Landscape">General Links</Link></li>
-          <li><Link to="/Historical-Landscape">Early Historic Period</Link></li>
-          <li><Link to="/Historical-Landscape">Kuleana Act</Link></li>
-          <li><Link to="/Historical-Landscape">Plantation and Ranching Eras</Link></li>
-          <li><Link to="/Historical-Landscape">Historical Maps and Photographs</Link></li>
-          <li><Link to="/Historical-Landscape">Previous Archaeology</Link></li>
-          <li><Link to="/Historical-Landscape">Property Records Search</Link></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-);
+      </section>
+    </div>
+  );
 }
