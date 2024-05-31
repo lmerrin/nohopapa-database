@@ -5,7 +5,7 @@ import { capitalizeWords } from "./utils";
 export default function ResourceCategory({ title, subcategories = [], link }) {
   return (
     <div className="category">
-      <h2>{title}</h2>
+      <h2>{capitalizeWords(title)}</h2>
       <ul>
         {subcategories.map((subcategory) => {
           return (

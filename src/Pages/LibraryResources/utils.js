@@ -7,3 +7,10 @@ export function capitalizeWords(str) {
      .join(' ');        // Join the array back into a string
    }
 
+export function replaceDashesWithSpaces(str) {
+    return str.replace("-", " ");
+}
+
+export function replaceSpacesWithDashes (str){
+    return str.replace(" ", "-");
+}
