@@ -148,7 +148,23 @@ const fetchIslands = async () => {
     id: doc.id,
     ...doc.data(),
   }));
+  for (const island of islands) {
+    const mokus = await getMokusForIsland(island);
+    island.moku = mokus;
+  }
   return islands;
+};
+
+const getMokusForIsland = async (island) => {
+  const mokuPromises = island.moku.map((islandId) => {
+    return getDoc(islandId);
+  });
+
+  const mokuDocs = await Promise.all(mokuPromises);
+  const mokus = mokuDocs.map((mokuDoc) => {
+    return { id: mokuDoc.id, ...mokuDoc.data() };
+  });
+  return mokus;
 };
 
 export default {

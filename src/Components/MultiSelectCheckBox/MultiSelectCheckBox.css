@@ -1,0 +1,10 @@
+.checkbox-list {
+    list-style: none;
+border: solid black 1px;
+}
+
+.checkable-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
