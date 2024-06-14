@@ -1,5 +1,5 @@
+import wkipImage from "../../assets/WKIP.png";
 import "./Home.css";
-import wkipImage from "../../assets/WKIP.png"
 
 export default function Home() {
   return (
@@ -7,14 +7,19 @@ export default function Home() {
       <div className="home-background"></div>
       <header className="header-section">
         <h1>NOHOPAPA DATABASE</h1>
+<div className="welcome-section-container">
+        <section className="welcome-section">
         <p>Welina mai</p>
         <p>
-          The Nohopapa Database is a centralized and fully searchable database
+          The Nohopapa Database is a centralized database
           for the purpose of being able to organize resources within our hui.
           While this repository only contains reports and links at this time, it
           is with hope that it will expand to having all of our historic images,
-          maps, and collections in the future
+          maps, and other collections in the future.
         </p>
+        </section>
+        </div>
+
       </header>
 
       <main className="main-content">
@@ -24,17 +29,20 @@ export default function Home() {
             <li>
               <p>1. USE THE REPOSITORY </p>
               <p>
-                You can use the search bar in the repository to look anything
-                up—reports, authors, names, places. Feel free to also use the
-                resources page for a list of other external online resources and
+              You can use the
+                Library resources page for a list of external online resources and
                 repositories that can be used for primary research!
               </p>
+              <p>Feel free to also check out our Nohopapa Database to see 
+                our internal reports weʻve created. </p>
             </li>
             <li>
               <p>2. CONTRIBUTE</p>
               <p>
-                Help grow the database by clicking contribute and filling out
-                the form.
+                Help grow the our research resources! 
+              </p>
+              <p>
+             To add a new resource, head to the Library Resources page and filling out the form.
               </p>
             </li>
           </ol>
@@ -45,21 +53,32 @@ export default function Home() {
         </div>
 
         <aside className="explore-section">
-          <h2>Explore</h2>
+          <h2>Quick Links</h2>
           <ul>
-            <li>ENVIRONMENTAL LANDSCAPE</li>
-            <li>CULTURAL LANDSCAPE</li>
-            <li>HISTORICAL LANDSCAPE</li>
-            <li>KULEANA ACT</li>
+            <li>PLACE NAMES</li>
+            <li>BOUNDARY COMMISSION TESTIMONY</li>
+            <li>MELE AND ʻOLELO NOʻEAU</li>
+            <li>MOʻOLELO</li>
+
+            <li>BOUNDARIES</li>
+            <li>SOILS</li>
+            <li>NAME OF UA</li>
+            <li>NAME OF MAKANI</li>
+            <li>PLANT SPECIES</li>
+
             <li>EARLY HISTORIC PERIOD</li>
-            <li>HISTORIC MAPS</li>
+            <li>KULEANA ACT</li>
+            <li>PLANTATION AND RANCHING ERAS</li>
+            <li>PREVIOUS ARCHEOLOGY GENERAL RESOURCES</li>
+            <li>GENERAL</li>
+
           </ul>
         </aside>
 
       </main>
 
-      <footer>
-        <p>Copyright © 2024 Lilia Website Designs</p>
+      <footer className="footer">
+        <p>© 2024 by Created by Lilia Merrin </p>
       </footer>
 
     </div>

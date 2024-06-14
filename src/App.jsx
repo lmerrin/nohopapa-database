@@ -3,6 +3,7 @@ import NavBar from "./Components/NavBar/NavBar.jsx";
 import Home from "./Pages/Home/Home.jsx";
 import LibraryResources from "./Pages/LibraryResources/LibraryResources.jsx";
 import ExternalResourcePage from "./Pages/LibraryResources/ExternalResource/ExternalResourcePage.jsx";
+import InternalResourcePage from "./Pages/InternalResource/InternalResourcePage.jsx";
 
 import api from "./api.js";
 import { useEffect, useState } from "react";
@@ -10,19 +11,17 @@ import "normalize.css";
 import "./App.css";
 
 function App() {
-  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const downloadResourceCategories = async () => {
+    const runApiTest = async () => {
       try {
-        const resourceCategories = await api.fetchResouceCategories();
-        console.log(resourceCategories);
-        setCategories(resourceCategories);
+        const testResults = await api.fetchIslands();
+        console.log(testResults);
       } catch (error) {
         console.log(error);
       }
     };
-    downloadResourceCategories();
+    runApiTest();
   }, []);
 
   return (
@@ -33,11 +32,15 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/Library-Resources"
-          element={<LibraryResources categories={categories} />}
+          element={<LibraryResources/>}
         />
         <Route
           path="Library-Resources/:categoryName"
           element={<ExternalResourcePage />}
+        />
+        <Route
+        path="Internal-Resources"
+        element={<InternalResourcePage />}
         />
       </Routes>
     </>

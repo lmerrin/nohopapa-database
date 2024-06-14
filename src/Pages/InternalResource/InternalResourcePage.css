@@ -1,0 +1,49 @@
+
+.internal-resource-container {
+border: 1px solid blue;
+margin-top: 60px;
+padding: 30px;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+}
+
+.resource-item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+
+}
+
+.left-section {
+    display: flex;
+    gap: 2rem;
+}
+
+.resource-img {
+    width: 100px;
+    border-radius: 5px;
+    border: 3px solid black;
+}
+
+.resource-details {
+    display: flex;
+    flex-direction: column;
+}
+.resource-btn {
+    justify-self: end;
+    align-self: center;
+}
