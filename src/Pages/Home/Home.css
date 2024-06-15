@@ -58,7 +58,8 @@ body {
 .welcome-section {
   width: 100vw;
   max-width: 1200px;  
-  background-color: lightblue;
+  background-color: #172234;
+  opacity: 60%;
   padding: 40px 20px; 
   color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -97,7 +98,6 @@ body {
 }
 
 .get-started h2,
-.welcome-section h2,
 .explore-section h2 {
   font-size: 1.5em;
   color: #fff;
@@ -172,7 +172,6 @@ body {
   }
 
   .get-started,
-  .welcome-section,
   .explore-section {
     width: 90%;
     margin: 10px 0;
